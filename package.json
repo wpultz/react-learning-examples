@@ -1,0 +1,27 @@
+{
+  "name": "react-learning-examples",
+  "version": "1.0.0",
+  "description": "a collection of examples illustrating using React.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wpultz/react-learning-examples.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "webpack",
+    "babel"
+  ],
+  "author": "wpultz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wpultz/react-learning-examples/issues"
+  },
+  "homepage": "https://github.com/wpultz/react-learning-examples#readme"
+}
