@@ -29,7 +29,7 @@ export default class DropDown extends Component {
     // called when a component's props have changed.
   }
 
-  componentShouldUpdate(nextProps, nextState) {
+  shouldComponentUpdate(nextProps, nextState) {
     // called when a component receives new props
     // return a boolean from this function to indicate that it should or should not re-render
     if (nextProps.options === this.props.options) {
