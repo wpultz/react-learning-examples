@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build:dev": "NODE_ENV=development webpack --config webpack.config.js",
+    "build": "NODE_ENV=production webpack -p --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +25,11 @@
   "bugs": {
     "url": "https://github.com/wpultz/react-learning-examples/issues"
   },
-  "homepage": "https://github.com/wpultz/react-learning-examples#readme"
+  "homepage": "https://github.com/wpultz/react-learning-examples#readme",
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0",
+    "webpack": "^2.2.1"
+  }
 }
