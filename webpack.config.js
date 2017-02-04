@@ -29,8 +29,8 @@ module.exports = {
     publicPath: 'http://localhost:8080/bundles/'
   },
   module: {
-    loaders: [
-      { test: /\.jsx?$/, exclude: /node_modules/, loaders: ['react-hot', 'babel'] }
+    rules: [
+      { test: /\.jsx?$/, exclude: /node_modules/, use: ['react-hot-loader', 'babel-loader'] }
     ]
   },
   devServer: {
@@ -42,8 +42,8 @@ module.exports = {
     alias: {
       react: 'react'
     },
-    extensions: ['', '.js', '.jsx', '.json'],
-    modulesDirectories: [
+    extensions: ['.js', '.jsx'],
+    modules: [
       'node_modules'
     ]
   },

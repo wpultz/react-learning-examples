@@ -2,6 +2,7 @@
 
 ## An introduction to React.js
 
+Here we will examine React components, component props, and components state.
 
 ## Components
 
@@ -36,7 +37,7 @@ MyComponent.propTypes = {
 ```
 MyComponent.propTypes = {
   nodeProp: React.PropTypes.node,
-  elemProp: React.PropTypes.elem
+  elemProp: React.PropTypes.element
 }
 ```
 
@@ -78,6 +79,22 @@ MyComponent.propTypes = {
 ### Accessing Properties
 
 Props are accessible with `this.props` throughout the methods of a component class.
+
+```
+render() {
+  return <div>{ this.props.text }<div>
+}
+```
+
+### Passing Properties into a Component
+
+When creating an instance of a component, you can pass a value into a component with curly braces.
+
+```
+render() {
+  return <AComponent firstProp={ 'a' } secondProp={ 'b' } />
+}
+```
 
 
 ## Component State
@@ -153,3 +170,5 @@ render() {
 
 
 ## More
+
+TODO Do a section on Stateful vs. Stateless components

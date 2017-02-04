@@ -20,3 +20,12 @@
 
 
 ## shouldComponentUpdate
+
+
+## Performance
+
+
+## Remote Calls + Side Effects
+
+
+## DOM Event listeners

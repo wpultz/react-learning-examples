@@ -19,6 +19,7 @@ Throughout the examples, you will see many many things that may look unfamiliar 
 
 ```
 let myVar = 'abc'
+myVar = 'def'
 
 const otherVar = 'def'
 otherVar = 'ghi' // big ole error!
@@ -92,6 +93,14 @@ console.log(f) // 5
 let f = myMap.f || 5
 console.log(f) // 5
 ```
+
+### Binding `this`
+
+In React components defined as ES6 classes, functions to be used as event callbacks or that are passed into child components need to have `this` bound to them so that when the function is invoked, it will have the proper binding, and will have access to the props and other functions in the component that it was defined in.
+
+This can be achieved with `this.functionName = this.functionName.bind(this)` in the component's constructor.
+
+In the Stage 0 Babel preset, the function bind operator (`::`) is available. Using `::`, the function can be rebound as such: `this.functionName = ::this.functionName`.
 
 
 ## Babel
