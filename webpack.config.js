@@ -8,14 +8,14 @@ var entries;
 /* eslint-enable */
 if (process.env.NODE_ENV === 'production') {
   entries = {
-    app: './app.js',
+    app: './tictactoe/app.js',
   };
 } else {
   entries = {
     app: [
       'webpack-dev-server/client?http://localhost:8080',
       'webpack/hot/only-dev-server',
-      './app.js'
+      './tictactoe/appRedux.js'
     ]
   };
 }
@@ -30,7 +30,8 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.jsx?$/, exclude: /node_modules/, use: ['react-hot-loader', 'babel-loader'] }
+      { test: /\.jsx?$/, exclude: /node_modules/, use: ['react-hot-loader', 'babel-loader'] },
+      { test: /\.css$/, use: [ 'style-loader', 'css-loader' ] }
     ]
   },
   devServer: {
