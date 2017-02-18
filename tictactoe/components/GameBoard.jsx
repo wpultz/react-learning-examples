@@ -20,6 +20,7 @@ export default class GameBoard extends Component {
   render() {
     const { positions, handlePositionClick } = this.props
 
+    // segment the positions into three rows of three
     const positionMatrix = [
       positions.slice(0, 3),
       positions.slice(3, 6),

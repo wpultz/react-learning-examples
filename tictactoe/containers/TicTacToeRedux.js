@@ -39,12 +39,15 @@ class TicTacToe extends Component {
 
 
   render() {
-    const { positions } = this.props
+    const { positions, currentPlayer } = this.props
 
     return (
       <div>
-        <h1>Tic Tac Toenails</h1>
+        <h1>Tic Tac Toe</h1>
+        <div>It is <strong>{ currentPlayer }</strong>'s turn</div>
+        <br />
         <GameBoard positions={ positions } handlePositionClick={ this.handlePositionClick } />
+        <br />
         <button onClick={ this.handleReset }>Reset Game</button>
       </div>
     )
