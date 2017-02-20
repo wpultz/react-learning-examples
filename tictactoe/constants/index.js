@@ -1,3 +1,3 @@
 export const PLAYER_X = 'X'
 export const PLAYER_O = 'O'
-export const EMPTY_SPACE = ''
+export const EMPTY = ''

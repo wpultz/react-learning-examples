@@ -2,7 +2,7 @@
 import {
   PLAYER_X,
   PLAYER_O,
-  EMPTY_SPACE
+  EMPTY
 } from '../constants'
 
 
@@ -33,7 +33,7 @@ export function reset() {
 
 // initial state of the redux store
 const initialState = {
-  positions: [EMPTY_SPACE, EMPTY_SPACE, EMPTY_SPACE, EMPTY_SPACE, EMPTY_SPACE, EMPTY_SPACE, EMPTY_SPACE, EMPTY_SPACE, EMPTY_SPACE],
+  positions: [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
   currentPlayer: PLAYER_X
 }
 

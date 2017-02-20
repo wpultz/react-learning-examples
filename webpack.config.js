@@ -8,7 +8,7 @@ var entries;
 /* eslint-enable */
 if (process.env.NODE_ENV === 'production') {
   entries = {
-    app: './tictactoe/app.js',
+    app: './tictactoe/appRedux.js',
   };
 } else {
   entries = {

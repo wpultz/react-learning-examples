@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import {
   PLAYER_X,
   PLAYER_O,
-  EMPTY_SPACE
+  EMPTY
 } from '../constants'
 
 import GameBoard from '../components/GameBoard'
@@ -17,7 +17,7 @@ export default class TicTacToe extends Component {
     // place to maintain the application state so that it's children may consume the state or
     // pieces of the state without too many acrobatics
     this.state = {
-      positions: [EMPTY_SPACE, EMPTY_SPACE, EMPTY_SPACE, EMPTY_SPACE, EMPTY_SPACE, EMPTY_SPACE, EMPTY_SPACE, EMPTY_SPACE, EMPTY_SPACE],
+      positions: [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
       currentPlayer: PLAYER_X
     }
 
