@@ -24,6 +24,7 @@ export default class TicTacToe extends Component {
     // notice the function rebinding to ensure that `this` references this TicTacToe component
     // inside the `handlePositionClick` function
     this.handlePositionClick = ::this.handlePositionClick
+    this.reset = ::this.reset
   }
 
 
@@ -38,6 +39,13 @@ export default class TicTacToe extends Component {
     })
   }
 
+  reset() {
+    this.setState({
+      positions: [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
+      currentPlayer: PLAYER_X
+    })
+  }
+
 
   render() {
     const { positions } = this.state
@@ -45,6 +53,7 @@ export default class TicTacToe extends Component {
       <div>
         <h1>Tic Tac Toenails</h1>
         <GameBoard positions={ positions } handlePositionClick={ this.handlePositionClick } />
+        <button onClick={ this.reset }>Reset Game</button>
       </div>
     )
   }
