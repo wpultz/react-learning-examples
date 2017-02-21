@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === 'production') {
     app: [
       'webpack-dev-server/client?http://localhost:8080',
       'webpack/hot/only-dev-server',
-      './tictactoe/app.js'
+      './tictactoe/appRedux.js'
     ]
   };
 }

@@ -28,14 +28,14 @@ class TicTacToe extends Component {
 
 
   handlePositionClick(position) {
-    const { makeMove, currentPlayer } = this.props
+    const { dispatch, currentPlayer } = this.props
 
-    makeMove(currentPlayer, position)
+    this.props.dispatch(makeMove(currentPlayer, position))
   }
 
 
   handleReset() {
-    this.props.reset()
+    this.props.dispatch(reset())
   }
 
 
@@ -62,9 +62,4 @@ function mapStateToProps(state) {
   }
 }
 
-const dispatchableActions = {
-  makeMove,
-  reset
-}
-
-export default connect(mapStateToProps, dispatchableActions)(TicTacToe)
+export default connect(mapStateToProps)(TicTacToe)
