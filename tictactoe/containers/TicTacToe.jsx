@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import '../css/tictactoe.css'
+
 import {
   PLAYER_X,
   PLAYER_O,
@@ -29,13 +31,13 @@ export default class TicTacToe extends Component {
 
 
   handlePositionClick(position) {
-    const { playerType, positions } = this.state
+    const { currentPlayer , positions } = this.state
 
-    positions[position] = playerType,
+    positions[position] = currentPlayer
 
     this.setState({
       positions,
-      playerType: playerType === PLAYER_X ? PLAYER_O : PLAYER_X
+      currentPlayer: currentPlayer === PLAYER_X ? PLAYER_O : PLAYER_X
     })
   }
 

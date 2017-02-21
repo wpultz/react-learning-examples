@@ -1,7 +1,5 @@
 import React, { Component, PropTypes } from 'react'
 
-import '../css/tictactoe.css'
-
 import {
   PLAYER_X,
   PLAYER_O

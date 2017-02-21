@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 
+import '../css/tictactoe.css'
+
 import { makeMove, reset } from '../modules/tictactoe'
 
 import GameBoard from '../components/GameBoard'
