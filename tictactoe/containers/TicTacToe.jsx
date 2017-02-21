@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+// import the stylesheet, which will be loaded via webpack
 import '../css/tictactoe.css'
 
 import {
@@ -8,6 +9,7 @@ import {
   EMPTY
 } from '../constants'
 
+// import the GameBoard component
 import GameBoard from '../components/GameBoard'
 
 export default class TicTacToe extends Component {

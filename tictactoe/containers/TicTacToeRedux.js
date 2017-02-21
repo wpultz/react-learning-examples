@@ -1,10 +1,13 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 
+// import the stylesheet, which will be loaded via webpack
 import '../css/tictactoe.css'
 
+// import action creators for making a move and resetting the board
 import { makeMove, reset } from '../modules/tictactoe'
 
+// import the GameBoard component
 import GameBoard from '../components/GameBoard'
 
 class TicTacToe extends Component {
@@ -55,6 +58,7 @@ class TicTacToe extends Component {
   }
 }
 
+// mapStateToProps maps the redux store state to props to the TicTacToe component
 function mapStateToProps(state) {
   return {
     positions: state.positions,
