@@ -13,7 +13,6 @@ class TicTacToe extends Component {
     currentPlayer: PropTypes.string.isRequired
   }
 
-
   constructor(props) {
     super(props)
 

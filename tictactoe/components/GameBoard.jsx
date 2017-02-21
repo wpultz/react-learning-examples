@@ -42,6 +42,14 @@ export default class GameBoard extends Component {
       })
     })
 
+    // `boardRows` is now an array of table cells with Ex|Oh|Empty components, representing the board
+    // [
+    //   [ table cell component, table cell component, table cell component ]
+    //   [ table cell component, table cell component, table cell component ]
+    //   [ table cell component, table cell component, table cell component ]
+    // ]
+
+    // inside the JSX, iterate over the rows, each row becomes a table row(<tr>) with it's cells
     return (
       <div>
         <table>

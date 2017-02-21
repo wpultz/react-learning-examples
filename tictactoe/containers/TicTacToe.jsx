@@ -50,11 +50,15 @@ export default class TicTacToe extends Component {
 
 
   render() {
-    const { positions } = this.state
+    const { positions, currentPlayer } = this.state
+
     return (
       <div>
         <h1>Tic Tac Toe</h1>
+        <div>It is <strong>{ currentPlayer }</strong>'s turn</div>
+        <br />
         <GameBoard positions={ positions } handlePositionClick={ this.handlePositionClick } />
+        <br />
         <button onClick={ this.reset }>Reset Game</button>
       </div>
     )
