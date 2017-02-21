@@ -27,6 +27,7 @@ export default class TicTacToe extends Component {
 
     // notice the function rebinding to ensure that `this` references this TicTacToe component
     // inside the `handlePositionClick` function
+    // ditto for `reset`
     this.handlePositionClick = ::this.handlePositionClick
     this.reset = ::this.reset
   }

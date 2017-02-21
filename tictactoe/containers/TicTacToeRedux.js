@@ -25,6 +25,7 @@ class TicTacToe extends Component {
 
     // notice the function rebinding to ensure that `this` references this TicTacToe component
     // inside the `handlePositionClick` function
+    // ditto for `handleReset`
     this.handlePositionClick = ::this.handlePositionClick
     this.handleReset = ::this.handleReset
   }
@@ -33,7 +34,7 @@ class TicTacToe extends Component {
   handlePositionClick(position) {
     const { dispatch, currentPlayer } = this.props
 
-    this.props.dispatch(makeMove(currentPlayer, position))
+    dispatch(makeMove(currentPlayer, position))
   }
 
 
