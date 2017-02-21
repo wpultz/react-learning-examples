@@ -18,28 +18,29 @@ export default class GameBoard extends Component {
   render() {
     const { positions, handlePositionClick } = this.props
 
-    // segment the positions into three rows of three
-    const positionMatrix = [
-      positions.slice(0, 3),
-      positions.slice(3, 6),
-      positions.slice(6)
-    ]
-
     // iterate over the rows of the position matrix to build up the positions
-    const boardRows = positionMatrix.map((row, i) => {
-      // for a row, iterate over the the positions of the row to fill in markers
-      return row.map((position, k) => {
-        let marker
-        if (position === PLAYER_X) {
-          marker = <td key={ `cell-${i}-${k}` }><Ex /></td>
-        } else if (position === PLAYER_O) {
-          marker = <td key={ `cell-${i}-${k}` }><Oh /></td>
-        } else {
-          // empty spaces will get a click handler to set the player type in that space
-          marker = <td key={ `cell-${i}-${k}` }><Empty onClick={ () => handlePositionClick((3 * i) + k) } /></td>
-        }
-        return marker
-      })
+    const boardRows = []
+    let currentRow = []
+    positions.forEach((position, i) => {
+      // get the type of marker for each space
+      let marker
+      if (position === PLAYER_X) {
+        marker = <Ex />
+      } else if (position === PLAYER_O) {
+        marker = <Oh />
+      } else {
+        // empty spaces get a click handler to take the space
+        marker = <Empty onClick={ () => handlePositionClick(i) }/>
+      }
+
+      // push a table cell with the marker into the current row
+      currentRow.push(<td key={ `cell-${i}` }>{ marker }</td>)
+
+      // if the current index is a multiple of three, push the current row into the board rows and reset currentRow
+      if ((i + 1) % 3 === 0) {
+        boardRows.push(currentRow)
+        currentRow = []
+      }
     })
 
     // `boardRows` is now an array of table cells with Ex|Oh|Empty components, representing the board
