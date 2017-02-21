@@ -51,7 +51,7 @@ export default class TicTacToe extends Component {
     const { positions } = this.state
     return (
       <div>
-        <h1>Tic Tac Toenails</h1>
+        <h1>Tic Tac Toe</h1>
         <GameBoard positions={ positions } handlePositionClick={ this.handlePositionClick } />
         <button onClick={ this.reset }>Reset Game</button>
       </div>
