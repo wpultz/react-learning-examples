@@ -10,3 +10,44 @@
   top: 50%;
   transform: translateY(-50%)
 }
+
+.u-posAbsolute {
+  position: absolute !important;
+}
+
+.u-posFixed {
+  position: fixed !important;
+}
+
+.u-posCenter {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.u-keepWithinScreen {
+  max-width: 50vh !important;
+  max-height: 60vh !important;
+}
+
+.u-dumbSize {
+  width: 500px;
+  height: 500px;
+}
+
+.Modal-bs {
+  background-color: blue;
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.Modal--content {
+  max-height: 100%;
+  overflow-x: hidden;
+}
+
+.ReactModal__Body--open {
+  overflow: hidden;
+}

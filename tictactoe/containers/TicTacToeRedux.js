@@ -1,5 +1,8 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+
+import ReactModal from 'react-modal'
 
 // import the stylesheet, which will be loaded via webpack
 import '../css/tictactoe.css'
@@ -16,32 +19,17 @@ class TicTacToe extends Component {
     currentPlayer: PropTypes.string.isRequired
   }
 
-  constructor(props) {
-    super(props)
 
-    // we've been able to eliminate the component state altogether!
-    // the applciation state is now being maintained in the Redux store, and all mutations will
-    // take place via actions and reducers
-
-    // notice the function rebinding to ensure that `this` references this TicTacToe component
-    // inside the `handlePositionClick` function
-    // ditto for `handleReset`
-    this.handlePositionClick = ::this.handlePositionClick
-    this.handleReset = ::this.handleReset
-  }
-
-
-  handlePositionClick(position) {
+  handlePositionClick = position => {
     const { dispatch, currentPlayer } = this.props
 
     dispatch(makeMove(currentPlayer, position))
   }
 
 
-  handleReset() {
+  handleReset = () => {
     this.props.dispatch(reset())
   }
-
 
   render() {
     const { positions, currentPlayer } = this.props

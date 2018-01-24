@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should have default state 1`] = `
+Object {
+  "currentPlayer": "X",
+  "positions": Array [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+  ],
+}
+`;
+
+exports[`should react to a move by X 1`] = `
+Object {
+  "currentPlayer": "X",
+  "positions": Array [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+  ],
+}
+`;
+
+exports[`should react to a move by X 2`] = `
+Object {
+  "currentPlayer": "O",
+  "positions": Array [
+    "X",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+  ],
+}
+`;
+
+exports[`should react to a move, then be reset 1`] = `
+Object {
+  "currentPlayer": "X",
+  "positions": Array [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+  ],
+}
+`;
+
+exports[`should react to a move, then be reset 2`] = `
+Object {
+  "currentPlayer": "X",
+  "positions": Array [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "O",
+    "",
+    "",
+    "",
+  ],
+}
+`;
+
+exports[`should react to a move, then be reset 3`] = `
+Object {
+  "currentPlayer": "X",
+  "positions": Array [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+  ],
+}
+`;

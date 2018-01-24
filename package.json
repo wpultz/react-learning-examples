@@ -4,12 +4,25 @@
   "description": "a collection of examples illustrating using React.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "lint": "eslint",
     "start:dev": "npm run build:dev & node server.js",
     "start": "npm run build & node server.js",
     "build:dev": "NODE_ENV=development webpack-dev-server --inline --hot --config webpack.config.js",
     "build": "NODE_ENV=production webpack -p --config webpack.config.js"
+  },
+  "jest": {
+    "collectCoverageFrom": ["tictactoe/**/*.{js,jsx}"],
+    "coverageReporters": ["lcov"],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 90
+      }
+    },
+    "coverageDirectory": "reports/test_coverage"
   },
   "repository": {
     "type": "git",
@@ -28,25 +41,32 @@
   },
   "homepage": "https://github.com/wpultz/react-learning-examples#readme",
   "dependencies": {
-    "babel": "^6.5.2",
-    "babel-core": "^6.22.1",
-    "babel-eslint": "^7.1.1",
-    "babel-loader": "^6.2.10",
-    "babel-preset-es2015": "^6.22.0",
-    "babel-preset-react": "^6.22.0",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "babel-preset-react-hmre": "^1.1.1",
-    "babel-preset-stage-0": "^6.22.0",
-    "css-loader": "^0.26.1",
-    "eslint": "^3.16.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^0.28.9",
+    "eslint": "^4.16.0",
     "isomorphic-fetch": "^2.2.1",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "react-hot-loader": "^1.3.1",
-    "react-redux": "^5.0.2",
-    "redux": "^3.6.0",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-hot-loader": "^3.1.3",
+    "react-modal": "^3.1.11",
+    "react-redux": "^5.0.6",
+    "react-test-renderer": "^16.2.0",
+    "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
-    "style-loader": "^0.13.1",
-    "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.3.0"
+    "style-loader": "^0.19.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
+  },
+  "devDependencies": {
+    "babel-jest": "^22.1.0",
+    "jest": "^22.1.4"
   }
 }

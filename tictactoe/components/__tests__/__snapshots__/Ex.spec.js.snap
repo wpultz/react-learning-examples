@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders an X 1`] = `
+<div
+  className="gamepiece"
+>
+  <span
+    className="gamepiece-content"
+  >
+    X
+  </span>
+</div>
+`;
