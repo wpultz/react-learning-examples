@@ -20,6 +20,11 @@ class TicTacToe extends Component {
   }
 
 
+  state = {
+    isOpen: false
+  }
+
+
   handlePositionClick = position => {
     const { dispatch, currentPlayer } = this.props
 
@@ -31,17 +36,31 @@ class TicTacToe extends Component {
     this.props.dispatch(reset())
   }
 
+
+  componentDidMount() {
+    this.props.dispatch({ type: 'INIT' })
+  }
+
+
   render() {
     const { positions, currentPlayer } = this.props
 
     return (
-      <div>
-        <h1>Tic Tac Toe</h1>
-        <div>It is <strong>{ currentPlayer }</strong>'s turn</div>
-        <br />
+      <div className="u-flex u-flexCol u-flexJustifyCenter">
+        <h1 className="u-flex u-flexJustifyCenter">Tic Tac Toe</h1>
+        <div className="u-flex u-flexJustifyCenter">It is&nbsp;<strong>{ currentPlayer }</strong>'s turn</div>
         <GameBoard positions={ positions } handlePositionClick={ this.handlePositionClick } />
+        <button style={{ width: 200, left: 0, right: 0, margin: 'auto' }} onClick={ this.handleReset }>Reset Game</button>
+
         <br />
-        <button onClick={ this.handleReset }>Reset Game</button>
+
+        <ReactModal
+          isOpen={ this.state.isOpen }
+          onRequestClose={ () => this.setState({ isOpen: false }) }
+          shouldCloseOnEsc={ false }
+        >
+          hi
+        </ReactModal>
       </div>
     )
   }

@@ -10,6 +10,7 @@ import {
 const MAKE_MOVE = 'MAKE_MOVE'
 // constant for the `RESET` action type
 const RESET = 'RESET'
+const BOARD_UPDATE = 'BOARD_UPDATE'
 
 
 // action creator for the `MAKE_MOVE` action type
@@ -27,6 +28,17 @@ export function makeMove(playerType, position) {
 export function reset() {
   return {
     type: RESET
+  }
+}
+
+
+export function boardUpdate(positions, currentPlayer) {
+  return {
+    type: BOARD_UPDATE,
+    payload: {
+      positions,
+      currentPlayer
+    }
   }
 }
 
@@ -57,6 +69,10 @@ export default function tictactoe(state = initialState, action) {
 
       // return the new state of the tic tac toe board
       return newState
+
+    case BOARD_UPDATE: {
+      return action.payload
+    }
 
     case RESET:
       // when resetting the game, return the initial state

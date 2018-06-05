@@ -11,6 +11,23 @@
   transform: translateY(-50%)
 }
 
+.gamepiece-x, .gamepiece-o {
+  height: 80px;
+  width: 80px;
+}
+
+.u-flex {
+  display: flex;
+}
+
+.u-flexCol {
+  flex-direction: column;
+}
+
+.u-flexJustifyCenter {
+  justify-content: center;
+}
+
 .u-posAbsolute {
   position: absolute !important;
 }

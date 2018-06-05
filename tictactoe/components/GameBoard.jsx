@@ -53,7 +53,7 @@ export default class GameBoard extends Component {
 
     // inside the JSX, iterate over the rows, each row becomes a table row(<tr>) with it's cells
     return (
-      <div>
+      <div className="u-flex u-flexJustifyCenter">
         <table>
           <tbody>
             {

@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint",
+    "tsc": "tsc",
     "start:dev": "npm run build:dev & node server.js",
     "start": "npm run build & node server.js",
     "build:dev": "NODE_ENV=development webpack-dev-server --inline --hot --config webpack.config.js",
@@ -45,6 +46,9 @@
   },
   "homepage": "https://github.com/wpultz/react-learning-examples#readme",
   "dependencies": {
+    "@types/react": "^16.3.16",
+    "@types/react-dom": "^16.0.6",
+    "awesome-typescript-loader": "^5.0.0",
     "babel": "^6.23.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
@@ -55,6 +59,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^0.28.9",
     "eslint": "^4.16.0",
+    "img-loader": "^2.0.1",
     "isomorphic-fetch": "^2.2.1",
     "moment": "^2.20.1",
     "prop-types": "^15.6.0",
@@ -66,7 +71,10 @@
     "react-test-renderer": "^16.2.0",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
+    "source-map-loader": "^0.2.3",
     "style-loader": "^0.19.1",
+    "typescript": "^2.9.1",
+    "url-loader": "^0.6.2",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.11.1"
   },
