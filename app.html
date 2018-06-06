@@ -11,20 +11,20 @@
     <div id="app-container"></div>
 
     <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/worker.js')
-          .then(() => console.log('registered!'))
-          .catch(() => console.log('womp womp'))
-      }
+      // if ('serviceWorker' in navigator) {
+      //   navigator.serviceWorker.register('/worker.js')
+      //     .then(() => console.log('registered!'))
+      //     .catch(() => console.log('womp womp'))
+      // }
     </script>
 
     <!-- point to webpack-dev-server for development + hot module replacement -->
-    <!-- <script src="http://localhost:8080/bundles/shared.bundle.js"></script>
-    <script src="http://localhost:8080/bundles/app.bundle.js"></script> -->
+    <script src="http://localhost:8080/bundles/shared.bundle.js"></script>
+    <script src="http://localhost:8080/bundles/app.bundle.js"></script>
 
     <!-- point to production bundles -->
-    <script src="/bundles/shared.bundle.js"></script>
-    <script src="/bundles/app.bundle.js"></script>
+    <!-- <script src="/bundles/shared.bundle.js"></script>
+    <script src="/bundles/app.bundle.js"></script> -->
   </body>
 
 </html>

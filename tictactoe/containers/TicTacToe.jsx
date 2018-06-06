@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 // import the stylesheet, which will be loaded via webpack
-import '../css/tictactoe.css'
+// import '../css/tictactoe.css'
 
 import {
   PLAYER_X,
@@ -28,8 +28,8 @@ export default class TicTacToe extends Component {
     // notice the function rebinding to ensure that `this` references this TicTacToe component
     // inside the `handlePositionClick` function
     // ditto for `reset`
-    this.handlePositionClick = ::this.handlePositionClick
-    this.reset = ::this.reset
+    this.handlePositionClick = this.handlePositionClick.bind(this)
+    this.reset = this.reset.bind(this)
   }
 
 

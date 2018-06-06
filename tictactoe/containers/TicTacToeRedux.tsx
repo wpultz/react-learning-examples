@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import * as React from 'react'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
-import ReactModal from 'react-modal'
+// having to use require is dumb, but typescript hates default imports apparently
+const ReactModal = require('react-modal')
 
 // import the stylesheet, which will be loaded via webpack
 import '../css/tictactoe.css'
@@ -13,32 +14,41 @@ import { makeMove, reset } from '../modules/tictactoe'
 // import the GameBoard component
 import GameBoard from '../components/GameBoard'
 
-class TicTacToe extends Component {
-  static propTypes = {
-    positions: PropTypes.arrayOf(PropTypes.string).isRequired,
-    currentPlayer: PropTypes.string.isRequired
-  }
+const init = () => ({ type: 'INIT' })
+
+interface ITicProps {
+  positions: Array<string>;
+  currentPlayer: string;
+  init: Function;
+  makeMove: Function;
+  reset: Function;
+}
+
+interface ITicState {
+  isOpen: boolean;
+}
 
 
-  state = {
+class TicTacToeR extends React.Component<ITicProps, ITicState> {
+  readonly state: ITicState = {
     isOpen: false
   }
 
+  handlePositionClick = (position: number) => {
+    debugger
+    const { currentPlayer } = this.props
 
-  handlePositionClick = position => {
-    const { dispatch, currentPlayer } = this.props
-
-    dispatch(makeMove(currentPlayer, position))
+    this.props.makeMove(currentPlayer, position)
   }
 
 
   handleReset = () => {
-    this.props.dispatch(reset())
+    this.props.reset()
   }
 
 
   componentDidMount() {
-    this.props.dispatch({ type: 'INIT' })
+    this.props.init()
   }
 
 
@@ -67,11 +77,21 @@ class TicTacToe extends Component {
 }
 
 // mapStateToProps maps the redux store state to props to the TicTacToe component
-function mapStateToProps(state) {
+interface IState {
+  positions: Array<string>;
+  currentPlayer: string;
+}
+function mapStateToProps(state: IState) {
   return {
     positions: state.positions,
     currentPlayer: state.currentPlayer
   }
 }
 
-export default connect(mapStateToProps)(TicTacToe)
+function mapDispatchToProps(dispatch: any): any {
+  return bindActionCreators({
+    makeMove, init, reset
+  }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TicTacToeR)

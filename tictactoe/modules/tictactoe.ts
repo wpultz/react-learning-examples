@@ -14,7 +14,7 @@ const BOARD_UPDATE = 'BOARD_UPDATE'
 
 
 // action creator for the `MAKE_MOVE` action type
-export function makeMove(playerType, position) {
+export function makeMove(playerType: string, position: number) {
   return {
     type: MAKE_MOVE,
     payload: {
@@ -32,7 +32,7 @@ export function reset() {
 }
 
 
-export function boardUpdate(positions, currentPlayer) {
+export function boardUpdate(positions: Array<string>, currentPlayer: string) {
   return {
     type: BOARD_UPDATE,
     payload: {
@@ -43,6 +43,11 @@ export function boardUpdate(positions, currentPlayer) {
 }
 
 
+interface IState {
+  positions: Array<string>;
+  currentPlayer: string;
+}
+
 // initial state of the redux store
 const initialState = {
   positions: [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
@@ -51,7 +56,7 @@ const initialState = {
 
 
 // reducer to interpret actions and mutate the state accordingly
-export default function tictactoe(state = initialState, action) {
+export default function tictactoe(state: IState = initialState, action) {
   const { type, payload } = action
 
   switch(type) {
@@ -60,7 +65,7 @@ export default function tictactoe(state = initialState, action) {
       const { playerType, position } = payload
 
       // create a new state, so that mutations to the old state don't affect the UI
-      const newState = {}
+      const newState: IState = { positions: [], currentPlayer:  '' }
       // based on the action's player type, set the next player type
       newState.currentPlayer = payload.playerType === PLAYER_X ? PLAYER_O : PLAYER_X
       // replace the positions with a new array with the playerType spliced into the old positions

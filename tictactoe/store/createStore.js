@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux'
 
 import reducer from '../modules/tictactoe'
 
-import workerMiddleware from './workerMiddleware'
+// import workerMiddleware from './workerMiddleware'
 
 export default function configureStore(initialState) {
   const devToolsAvailable = typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
@@ -14,7 +14,7 @@ export default function configureStore(initialState) {
     reducer,
     initialState,
     composeEnhancers(
-      applyMiddleware(workerMiddleware)
+      // applyMiddleware(workerMiddleware)
     )
   )
 
